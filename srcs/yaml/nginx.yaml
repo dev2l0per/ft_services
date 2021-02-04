@@ -4,6 +4,8 @@ metadata:
   name: nginx
   labels:
     app: nginx
+  annotations:
+    metallb.universe.tf/allow-shared-ip: shared
 spec:
   type: LoadBalancer
   ports:
@@ -21,6 +23,7 @@ spec:
     protocol: TCP
   selector:
     app: nginx
+  loadBalancerIP: 172.17.0.2
 
 ---
 

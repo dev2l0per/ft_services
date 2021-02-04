@@ -22,6 +22,12 @@ spec:
         volumeMounts:
         - name: mysql
           mountPath: /var/lib/mysql/
+        livenessProbe:
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          timeoutSeconds: 5
+          tcpSocket:
+            port: 3306
       volumes:
       - name: mysql
         persistentVolumeClaim:

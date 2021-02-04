@@ -4,6 +4,8 @@ metadata:
   name: phpmyadmin
   labels:
     app: phpmyadmin
+  annotations:
+    metallb.universe.tf/allow-shared-ip: shared
 spec:
   selector:
     app: phpmyadmin
@@ -12,6 +14,7 @@ spec:
     targetPort: 5000
     protocol: TCP
   type: LoadBalancer
+  loadBalancerIP: 172.17.0.2
 ---
 apiVersion: apps/v1
 kind: Deployment
