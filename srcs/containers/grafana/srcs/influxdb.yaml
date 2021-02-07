@@ -1,6 +1,0 @@
-apiVersion: v1
-datasources:
-  - name: influxdb
-    url: http://influxdb:8086
-    database: telegraf
-
