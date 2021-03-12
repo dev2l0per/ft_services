@@ -12,42 +12,42 @@ sleep 10
 eval $(minikube docker-env)
 
 cd ./srcs/containers/
-echo -e "\033[47m\033[32m mysql image build \033[m"
+echo "mysql image build"
 docker build -t juyang_mysql ./mysql > /dev/null
-echo -e "\033[47m\033[32m wordpress image build \033[m"
+echo "wordpress image build"
 docker build -t juyang_wordpress ./wordpress > /dev/null
-echo -e "\033[47m\033[32m phpmyadmin image build \033[m"
+echo "phpmyadmin image build"
 docker build -t juyang_pma ./phpmyadmin > /dev/null
-echo -e "\033[47m\033[32m nginx image build \033[m"
+echo "nginx image build"
 docker build -t juyang_nginx ./nginx > /dev/null
-echo -e "\033[47m\033[32m ftps image build \033[m"
+echo "ftps image build"
 docker build -t juyang_ftps ./ftps > /dev/null
-echo -e "\033[47m\033[32m telegraf image build \033[m"
+echo "telegraf image build"
 docker build -t juyang_telegraf ./telegraf > /dev/null
-echo -e "\033[47m\033[32m influxdb image build \033[m"
+echo "influxdb image build"
 docker build -t juyang_influxdb ./influxdb > /dev/null
-echo -e "\033[47m\033[32m grafana image build \033[m"
+echo "grafana image build"
 docker build -t juyang_grafana ./grafana > /dev/null
-echo -e "\033[47m\033[32m 이미지 생성 완료 \033[m"
+echo "이미지 생성 완료"
 
 cd ../yaml/
-echo -e "\033[47m\033[32m mysql deployment 생성 \033[m"
+echo "mysql deployment 생성"
 kubectl apply -f mysql.yaml > /dev/null
-echo -e "\033[47m\033[32m wordpress deployment 생성 \033[m"
+echo "wordpress deployment 생성"
 kubectl apply -f wordpress.yaml > /dev/null
-echo -e "\033[47m\033[32m phpmyadmin deployment 생성 \033[m"
+echo "phpmyadmin deployment 생성"
 kubectl apply -f phpmyadmin.yaml > /dev/null
-echo -e "\033[47m\033[32m nginx deployment 생성 \033[m"
+echo "nginx deployment 생성"
 kubectl apply -f nginx.yaml > /dev/null
-echo -e "\033[47m\033[32m ftps deployment 생성 \033[m"
+echo "ftps deployment 생성"
 kubectl apply -f ftps.yaml > /dev/null
-echo -e "\033[47m\033[32m influxdb deployment 생성 \033[m"
+echo "influxdb deployment 생성"
 kubectl apply -f influxdb.yaml > /dev/null
-echo -e "\033[47m\033[32m telegraf deployment 생성 \033[m"
+echo "telegraf deployment 생성"
 kubectl apply -f telegraf.yaml > /dev/null
-echo -e "\033[47m\033[32m grafana deployment 생성 \033[m"
+echo "grafana deployment 생성"
 kubectl apply -f grafana.yaml > /dev/null
-echo -e "\033[47m\033[32m 모든 deployment 완료 \033[m"
+echo "모든 deployment 완료"
 sleep 3
 echo "minikube dashboard 실행"
 minikube addons enable metrics-server
